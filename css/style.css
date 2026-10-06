@@ -73,8 +73,6 @@ input:focus{border-color:var(--brand);outline:none}
 .ctag{font-size:17px;font-weight:800;margin:0 0 14px;color:#3a3358}
 .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .chips span{background:rgba(255,255,255,.85);border-radius:99px;padding:4px 12px;font-size:13px;font-weight:800;color:#3a3358}
-.score-badge{position:absolute!important;top:14px;right:14px;width:84px;height:84px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.25);z-index:2}
-.score-badge small{font-size:11px;font-weight:800;color:#6a6290;line-height:1}.score-badge b{font-size:30px;line-height:1.1;font-weight:900;color:#3a3358}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;margin-top:16px;box-shadow:var(--shadow)}
 .card p{margin:8px 0}
@@ -128,19 +126,12 @@ dialog h3{margin-top:0}
 .fu summary{cursor:pointer;display:flex;flex-direction:column;gap:2px}.fu summary span{font-size:12.5px;color:var(--muted)}
 .fu textarea{margin-top:10px}
 
-.dir-title{margin:2px 0 4px;font-size:clamp(20px,5vw,26px);letter-spacing:.06em;padding-right:96px;text-align:left}
-.dir-note{margin:0 0 6px;font-size:13.5px;line-height:1.7;color:#3a3358;background:rgba(255,255,255,.7);border-radius:12px;padding:8px 12px;text-align:left}
+/* 結果ヒーロー：見出し行（見出し＋IP設計度）→注記の順に縦に積む。重ならない構造 */
+.dir-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 8px}
+.dir-title{margin:0;padding:0;min-width:0;font-size:clamp(19px,5vw,26px);letter-spacing:.06em;text-align:left;overflow-wrap:anywhere}
+.score-badge{flex:none;width:76px;height:76px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px -4px rgba(0,0,0,.25)}
+.score-badge small{font-size:11px;font-weight:800;color:#6a6290;line-height:1}
+.score-badge b{font-size:28px;line-height:1.1;font-weight:900;color:#3a3358}
+.dir-note{margin:0 0 8px;font-size:13.5px;line-height:1.7;color:#3a3358;background:rgba(255,255,255,.7);border-radius:12px;padding:8px 12px;text-align:left}
 .dir-note b{color:#5b4bdb}
-@media (min-width:640px){.dir-title,.dir-note{text-align:center;padding-right:0}.dir-note{max-width:520px;margin:0 auto 6px}}
-
-.score-badge{width:68px!important;height:68px!important;top:12px!important;right:12px!important}.score-badge b{font-size:24px}.score-badge small{font-size:10px}
-.dir-title{padding-right:84px}.dir-note{margin-right:0}
-.dir-note{margin-top:34px}
-@media (min-width:640px){.dir-note{margin-top:0}.score-badge{width:84px!important;height:84px!important}.score-badge b{font-size:30px}.score-badge small{font-size:11px}}
-
-/* バッジは浮かせず、見出しと同じ行に並べる（文章と重ならない） */
-.dir-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
-.dir-title{margin:0!important;padding:0!important;text-align:left!important}
-.dir-head .score-badge{position:static!important;flex:none;width:76px!important;height:76px!important;box-shadow:0 4px 12px -4px rgba(0,0,0,.25)}
-.dir-head .score-badge b{font-size:28px!important}.dir-head .score-badge small{font-size:11px!important}
-.dir-note{margin:0 0 8px!important;max-width:none!important;text-align:left!important}
+.hero-char{margin:0 auto 12px!important}
